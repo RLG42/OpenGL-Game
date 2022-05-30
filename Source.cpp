@@ -28,11 +28,16 @@
 //#include "SDL.h"
 //#include "SDL_image.h"
 
+#include "irrKlang.h"
+using namespace irrklang;
+
+ISoundEngine* SoundEngine = createIrrKlangDevice();
+
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 float numberGen();
 GLFWwindow* window; 
 
-int main(void)
+int main(int argc, const char** argv)
 {
 
     if (!glfwInit())
@@ -198,12 +203,12 @@ int main(void)
 		// Laser
 		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
 		{
-
 			laserOn == true;
 			laserX += laserSPEED;
 			laserSizeX = 2.0f;
 			laserSizeY = 1.0f;
-
+			
+			
 		}
 		else if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE)
 		{
@@ -213,7 +218,6 @@ int main(void)
 			laserSizeX = 0.1f;
 			laserSizeY = 0.1f;
 			laserZ = playerZ - 1;
-
 		}
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -268,7 +272,7 @@ int main(void)
 		// Cube //		
 		glm::mat4 ModelMatrix2 = glm::mat4(1.0);
 		ModelMatrix2 = glm::translate(ModelMatrix2, glm::vec3(Moving[0].cubeX -= SPEED / 4.2, Moving[0].cubeY, Moving[0].cubeZ));
-		ModelMatrix2 = glm::scale(ModelMatrix2, glm::vec3(0.5, 0.5, 0.5));
+		ModelMatrix2 = glm::scale(ModelMatrix2, glm::vec3(0.7, 0.7, 0.7));
 		
 		angle += static_cast<float>(glfwGetTime());
 		glm::mat4 transform(1.0f);
@@ -287,7 +291,7 @@ int main(void)
 		// Cube 1 //
 		glm::mat4 ModelMatrix3 = glm::mat4(1.0);
 		ModelMatrix3 = glm::translate(ModelMatrix3, glm::vec3(Moving[1].cubeX -= SPEED / 4.4, Moving[1].cubeY, Moving[1].cubeZ));
-		ModelMatrix3 = glm::scale(ModelMatrix3, glm::vec3(0.5, 0.5, 0.5));
+		ModelMatrix3 = glm::scale(ModelMatrix3, glm::vec3(0.4, 0.4, 0.4));
 		ModelMatrix3 = glm::rotate(ModelMatrix3, angle, glm::vec3(20.0f, 4.0f, 10));
 		glm::mat4 MVP3 = ProjectionMatrix * ViewMatrix * ModelMatrix3;
 
@@ -311,7 +315,7 @@ int main(void)
 		// Cube 3 //
 		glm::mat4 ModelMatrix5 = glm::mat4(1.0);
 		ModelMatrix5 = glm::translate(ModelMatrix5, glm::vec3(Moving[3].cubeX -= SPEED / 4.8, Moving[3].cubeY, Moving[3].cubeZ));
-		ModelMatrix5 = glm::scale(ModelMatrix5, glm::vec3(0.5, 0.5, 0.5));
+		ModelMatrix5 = glm::scale(ModelMatrix5, glm::vec3(0.6, 0.6, 0.6));
 		ModelMatrix5 = glm::rotate(ModelMatrix5, angle, glm::vec3(0.0f, 0.0f, 7.0));
 		glm::mat4 MVP5 = ProjectionMatrix * ViewMatrix * ModelMatrix5;
 
@@ -352,6 +356,22 @@ int main(void)
 
 		collision();
 		
+		// Reset Laser Position //
+		if (laserX >= playerX + 25)
+		{
+			SoundEngine->play2D("audio/Laser_Valenspire_1.mp3", false);
+			laserX = playerX;
+			laserY = playerY;
+		}
+
+		if (laserX >= playerX )
+		{
+
+	
+	
+		}
+
+
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
         glDisableVertexAttribArray(2);
@@ -417,11 +437,13 @@ void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods
 	//
 	//	}
 	//}
-	//// Move Down
-	//if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-	//
-	//	playerY -= 0.1;
-	//}
+	// Move Down
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS == 0) {
+	
+		SoundEngine->play2D("audio/Laser_Valenspire_1.mp3", false);
+	}
+
+	
 
 }
 

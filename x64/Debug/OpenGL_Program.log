@@ -3,38 +3,38 @@ C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\coll
 C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\cube.h(11): message : see declaration of 'Cube'
 C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(30,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(31,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(43,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(44,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(50,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(51,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(52,17): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(103,9): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(103,9): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(103,20): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(103,20): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(103,31): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(103,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(156,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(157,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(158,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(180,18): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(185,19): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(190,18): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(195,18): warning C4305: '-=': truncation from 'double' to 'float'
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(202,12): warning C4553: '==': result of expression not used; did you intend '='?
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(210,12): warning C4553: '==': result of expression not used; did you intend '='?
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(211,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(212,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(266,72): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(270,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(285,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(289,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(297,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(301,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(309,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(313,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(321,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(336,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(351,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(44,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(45,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(53,25): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(54,27): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\include\collision.h(55,17): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(108,9): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(108,9): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(108,20): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(108,20): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(108,31): warning C4838: conversion from 'double' to 'GLfloat' requires a narrowing conversion
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(108,31): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(161,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(162,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(163,22): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(185,18): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(190,19): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(195,18): warning C4305: '+=': truncation from 'double' to 'float'
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(200,18): warning C4305: '-=': truncation from 'double' to 'float'
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(206,12): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(215,12): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(216,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(217,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(270,72): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(274,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(289,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(293,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(301,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(305,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(313,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(317,82): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(325,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(340,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\Source.cpp(355,75): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGL_Program.vcxproj -> C:\Users\Rory\source\repos\OpenGL_VS2022\OpenGL_Program\OpenGL-Game\x64\Debug\OpenGL_Program.exe
