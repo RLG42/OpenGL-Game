@@ -18,9 +18,15 @@ Collision detection was needed for the cubes to hit the player to lose a life, a
 
 I did have a fully working camera but i locked it in position to get the '2D' view. I also implemetned simple controls for the player, i didnt end up needing gravity as player is hovering like a space craft. I also added a simple text UI to show score, lives, time passed.
 
-If i had more time I would add sound and particle effects to the laser and cubes being destroyed.
+If i had more time I would add sound and particle effects to the laser and cubes being destroyed. I could of also had shooting enemies and power ups/events etc.
+
+Controls: 
+Esc = Quit
+WASD = Player Movement
+Space = Shoot
 
 ![image](https://user-images.githubusercontent.com/74846782/170994293-1c5e49a2-7ea3-4487-87f3-72f831124bd5.png)
+-- Screenshot -- 
 
 
 
