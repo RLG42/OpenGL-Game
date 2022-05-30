@@ -16,7 +16,9 @@ The main algorithms made the cubes move from right to left and instead of creati
 
 Collision detection was needed for the cubes to hit the player to lose a life, and for the cubes to be destroyed by the players laser. I used a simple AABB collision from the 2D version of the game. This system seemed fine for this situation as I didnt use the z axis too much and the game was close to being 2D.
 
-I did have a fully working camera but i locked it in position to get the '2D' view. I also implemetned simple controls for the player, i didnt end up needing gravity as player is hovering like a space craft.
+I did have a fully working camera but i locked it in position to get the '2D' view. I also implemetned simple controls for the player, i didnt end up needing gravity as player is hovering like a space craft. I also added a simple text UI to show score, lives, time passed.
+
+If i had more time I would add sound and particle effects to the laser and cubes being destroyed.
 
 ![image](https://user-images.githubusercontent.com/74846782/170994293-1c5e49a2-7ea3-4487-87f3-72f831124bd5.png)
 
