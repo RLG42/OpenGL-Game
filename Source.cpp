@@ -24,16 +24,13 @@
 #include "include/vboindexer.hpp"
 #include "include/text2D.hpp"
 
-#define SDL_MAIN_HANDLED
-#include "SDL.h"
+//#define SDL_MAIN_HANDLED
+//#include "SDL.h"
 //#include "SDL_image.h"
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 float numberGen();
 GLFWwindow* window; 
-
-
-
 
 int main(void)
 {
