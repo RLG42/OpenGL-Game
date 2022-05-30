@@ -10,15 +10,15 @@ many of the files are exact copies or have minor edits, including source files -
 and header files - controls.hpp, objloader.hpp, shader.hpp, text2D.hpp, texture.hpp, vboindexer.hpp 
 and shader files - StandardShading.fragmentshader, StandardShading.vertexshader, TextVertexShader.fragmentshader and TextVertexShader.vertexshader.
 
-The main Source.cpp is also based on the tutorials but heavily modifed by me. The main idea was to create a simple scrolling shooter but in 3D and using simple cubes for the retro look/design. It has the player shoot the cubes for points and looses a life if the cubes hit the player. Also loosly based on the Google Dinosaur game as it gradually gets faster the more you progress and try to get a high score.
+The main Source.cpp is also based on the tutorials but heavily modifed by me. The main idea was to create a simple scrolling shooter but in 3D and using simple cubes for the retro look/design. It has the player shoot the cubes for points and looses a life if the cubes hit the player. Also loosely based on the Google Dinosaur game as it gradually gets faster the more you progress and try to get a high score.
 
 The main algorithms made the cubes move from right to left and instead of creating new objects the cubes would 'respawn' back to the right when destroyed or went off screen. They also used random functions to reposition themselves on the x or y axis. Every time one cube would repsawn from going off screen the game speeds up, motivating the player never to let one pass.
 
 Collision detection was needed for the cubes to hit the player to lose a life, and for the cubes to be destroyed by the players laser. I used a simple AABB collision from the 2D version of the game. This system seemed fine for this situation as I didnt use the z axis too much and the game was close to being 2D.
 
-I did have a fully working camera but i locked it in position to get the '2D' view. I also implemetned simple controls for the player, i didnt end up needing gravity as player is hovering like a space craft. I also added a simple text UI to show score, lives, time passed.
+I did have a fully working camera but I locked it in position to get the '2D' view. I also implemetned simple controls for the player, i didnt end up needing gravity as player is hovering like a space craft. I also added a simple text UI to show score, lives and time passed.
 
-If i had more time I would add sound and particle effects to the laser and cubes being destroyed. I could of also had shooting enemies and power ups/events etc.
+As I worked from home I spent most my time just getting everything working. Setting up modern OpenGL with all the libaries I needed took a long time so the actual development of the game was very short. If I had more time I would add sound and particle effects to the laser and cubes being destroyed. I could of also had shooting enemies and power ups/events etc.
 
 Controls:
 -- Esc = Quit
