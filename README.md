@@ -5,8 +5,8 @@ This program is a game based on something i started in SDL2. This was in 2D so h
 ![image](https://user-images.githubusercontent.com/74846782/170986966-149e9725-1199-4d54-b198-2d6b24698446.png)
     -- Original game idea --
 
-Most this program is referenced from series of tutorials found here http://www.opengl-tutorial.org/ 
-many of the files are exact copies including source files - controls.cpp, objloader.cpp, shader.cpp, text2D.cpp, texture.cpp, vbdoindexer.cpp,
+Most of this program is referenced from series of tutorials found here http://www.opengl-tutorial.org/ 
+many of the files are exact copies or have minor edits, including source files - controls.cpp, objloader.cpp, shader.cpp, text2D.cpp, texture.cpp, vbdoindexer.cpp,
 and header files - controls.hpp, objloader.hpp, shader.hpp, text2D.hpp, texture.hpp, vboindexer.hpp 
 and shader files - StandardShading.fragmentshader, StandardShading.vertexshader, TextVertexShader.fragmentshader and TextVertexShader.vertexshader.
 
