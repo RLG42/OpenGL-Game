@@ -83,6 +83,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\SDL2_image\include;C:\SDL2_mixer\include;C:\SDL2\include;C:\src\vcpkg\installed\x64-windows\include;C:\Users\Rory\OneDrive\Desktop\CodeLinkers\glfw-3.3.7.bin.WIN64\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\SDL2_image\lib\x64;C:\SDL2\lib\x64;C:\src\vcpkg\installed\x64-windows\lib;C:\Users\Rory\OneDrive\Desktop\CodeLinkers\glfw-3.3.7.bin.WIN64\lib-vc2022;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -135,7 +137,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -143,6 +145,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\SDL2\lib\x64;C:\Users\Rory\OneDrive\Desktop\CodeLinkers\glfw-3.3.7.bin.WIN64\lib-vc2022;C:\src\vcpkg\installed\x64-windows\include;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
