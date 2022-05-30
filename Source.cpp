@@ -364,12 +364,12 @@ int main(int argc, const char** argv)
 			laserY = playerY;
 		}
 
-		if (laserX >= playerX )
-		{
-
-	
-	
-		}
+	//if (laserX >= playerX )
+	//{
+	//
+	//
+	//
+	//}
 
 
         glDisableVertexAttribArray(0);
