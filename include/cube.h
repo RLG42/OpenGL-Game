@@ -17,7 +17,7 @@ public:
     float cubeZ;
     float cubeSizeX;
     float cubeSizeY;
-    float cubeSizeZ;  
+    float cubeSizeZ;
 
 };
 

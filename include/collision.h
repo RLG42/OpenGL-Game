@@ -3,6 +3,11 @@
 // Cubes Struct//
 struct Cube Moving[4];
 
+#include "irrKlang.h"
+using namespace irrklang;
+
+ISoundEngine* SoundEngine2 = createIrrKlangDevice();
+
 bool checkCollision(float Ax, float Ay, float Aw, float Ah, float Bx, float By, float Bw, float Bh)
 {
 	if (Ay + Ah < By) return false;
@@ -12,6 +17,7 @@ bool checkCollision(float Ax, float Ay, float Aw, float Ah, float Bx, float By, 
 
 	return true;
 }
+
 
 /////////////////////////////////////////////////////// Collision Detection //////////////////////////////////////////////////////////////
 
@@ -31,6 +37,7 @@ void collision()
 			Moving[i].cubeY = distr(gen);
 
 			printf("Lost Life 3\n");
+			//Sleep(200);
 		}
 	}
 
@@ -44,7 +51,7 @@ void collision()
 			Moving[i].cubeX = 24 + distr(gen) / 2;
 			Moving[i].cubeY = distr(gen);
 			playerScore += 5;
-			
+			SoundEngine2->play2D("audio/explode2.mp3", false);
 			
 		}
 
@@ -56,7 +63,27 @@ void collision()
 		}
 	}
 
+	// low cubes //
 
+	double currentTime = glfwGetTime();
+	printf("%f Current Time is\n", currentTime);
+	if (currentTime > 29.2)
+
+	{
+		SPEED2 = 0.80f;
+		if (lowCubeX <= -20)
+		{
+			lowCubeX = 24;
+
+		}
+
+		if (lowCube2X <= -20)
+		{
+			lowCube2X = 24;
+
+		}
+
+	}
 
 	// Screen edge collision //
 	if (playerX < -15) { playerX = -15; }
@@ -66,3 +93,5 @@ void collision()
 
 
 }
+
+

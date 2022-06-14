@@ -7,6 +7,7 @@
 #include <string.h>
 #include <iostream>
 #include <random>
+#include<windows.h>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -24,6 +25,7 @@
 #include "include/vboindexer.hpp"
 #include "include/text2D.hpp"
 
+
 //#define SDL_MAIN_HANDLED
 //#include "SDL.h"
 //#include "SDL_image.h"
@@ -35,10 +37,18 @@ ISoundEngine* SoundEngine = createIrrKlangDevice();
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 float numberGen();
+void play();
+
+// Timer Stuff //
+float cooldownTime = 0.1f;
+float nextFireTime = 0.0f;
+
+// Window Var //
 GLFWwindow* window; 
 
 int main(int argc, const char** argv)
 {
+	SoundEngine->play2D("audio/music.mp3", true);
 
     if (!glfwInit())
     {
@@ -69,6 +79,7 @@ int main(int argc, const char** argv)
         return -1;
     }
 
+	// Keybord/mouse stuff //
     glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_FALSE);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwPollEvents();
@@ -81,8 +92,7 @@ int main(int argc, const char** argv)
     glDepthFunc(GL_LESS);
     glEnable(GL_CULL_FACE);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 512, 512, 0,
-		GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 512, 512, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
     GLuint VertexArrayID;
     glGenVertexArrays(1, &VertexArrayID);
     glBindVertexArray(VertexArrayID);
@@ -104,9 +114,9 @@ int main(int argc, const char** argv)
     // Get a handle for our "myTextureSampler" uniform
     GLuint TextureID = glGetUniformLocation(programID, "myTextureSampler");
 
+	// unused random colour buffer //
 	static GLfloat g_color_buffer_data[] = {
 	  distr(gen),distr(gen),distr(gen)
-
 	};
 
     // Read .obj file
@@ -166,6 +176,8 @@ int main(int argc, const char** argv)
 	  Moving[i].cubeSizeZ = 1.0;
   }
 
+
+
   // Main Events //
 
     do {
@@ -203,21 +215,15 @@ int main(int argc, const char** argv)
 		// Laser
 		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
 		{
-			laserOn == true;
-			laserX += laserSPEED;
-			laserSizeX = 2.0f;
-			laserSizeY = 1.0f;
-			
-			
+				laserOn == true;
+				laserX += laserSPEED;
+				laserSizeX = 2.0f;
+				laserSizeY = 2.0f;						
 		}
+
 		else if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE)
 		{
 			laserOn == false;
-			laserX = playerX-1.1;
-			laserY = playerY-0.1;
-			laserSizeX = 0.1f;
-			laserSizeY = 0.1f;
-			laserZ = playerZ - 1;
 		}
 
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -229,14 +235,18 @@ int main(int argc, const char** argv)
         glm::mat4 ViewMatrix = getViewMatrix();
 
 		//// Lights ////
-		glm::vec3 lightPos = glm::vec3(playerX, playerY + 2, playerZ + 2);
+		glm::vec3 lightPos = glm::vec3(lowCubeX, lowCubeY + -2, lowCubeZ + 8);
 		glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
 		glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &ViewMatrix[0][0]);
 
 		////// Object Rendering //////
-
-		float angle = 0.0f; // For rotations 
-
+		// 
+		// For rotations //
+		float angle = 0.0f; 
+		angle += static_cast<float>(glfwGetTime());
+		// For rotations //
+		// 
+		
 		// Player cube //
 		glm::mat4 ModelMatrix1 = glm::mat4(1.0);
 		ModelMatrix1 = glm::translate(ModelMatrix1, glm::vec3(playerX, playerY, playerZ));
@@ -262,6 +272,7 @@ int main(int argc, const char** argv)
 		glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
 		glVertexAttribPointer(1,2,GL_FLOAT,GL_FALSE,0,(void*)0);
 
+		// 3rd attribute buffer : normals
 		glEnableVertexAttribArray(2);
 		glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
 		glVertexAttribPointer(2,3,GL_FLOAT,GL_FALSE,0,(void*)0);
@@ -272,10 +283,7 @@ int main(int argc, const char** argv)
 		// Cube //		
 		glm::mat4 ModelMatrix2 = glm::mat4(1.0);
 		ModelMatrix2 = glm::translate(ModelMatrix2, glm::vec3(Moving[0].cubeX -= SPEED / 4.2, Moving[0].cubeY, Moving[0].cubeZ));
-		ModelMatrix2 = glm::scale(ModelMatrix2, glm::vec3(0.7, 0.7, 0.7));
-		
-		angle += static_cast<float>(glfwGetTime());
-		glm::mat4 transform(1.0f);
+		ModelMatrix2 = glm::scale(ModelMatrix2, glm::vec3(0.7, 0.7, 0.7));		
 		ModelMatrix2 = glm::rotate(ModelMatrix2, angle, glm::vec3(3.0f, 4.0f, 100.0f));
 		glm::mat4 MVP2 = ProjectionMatrix * ViewMatrix * ModelMatrix2;
 
@@ -324,10 +332,34 @@ int main(int argc, const char** argv)
 
 		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, (void*)0);
 
+		// Cube 4 Low //
+		glm::mat4 ModelMatrix8 = glm::mat4(1.0);
+		ModelMatrix8 = glm::translate(ModelMatrix8, glm::vec3(lowCubeX -= SPEED2, lowCubeY, lowCubeZ));
+		ModelMatrix8 = glm::scale(ModelMatrix8, glm::vec3(0.4, 0.4, 0.4));
+		ModelMatrix8 = glm::rotate(ModelMatrix8, angle, glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 MVP8 = ProjectionMatrix * ViewMatrix * ModelMatrix8;
+
+		glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP8[0][0]);
+		glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &ModelMatrix8[0][0]);
+
+		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, (void*)0);
+
+		// Cube 5 Low //
+		glm::mat4 ModelMatrix9 = glm::mat4(1.0);
+		ModelMatrix9 = glm::translate(ModelMatrix9, glm::vec3(lowCube2X -= SPEED2, lowCube2Y, lowCube2Z));
+		ModelMatrix9 = glm::scale(ModelMatrix9, glm::vec3(0.4, 0.4, 0.4));
+		ModelMatrix9 = glm::rotate(ModelMatrix9, angle, glm::vec3(0.0f, 0.0f, 1.0f));
+		glm::mat4 MVP9 = ProjectionMatrix * ViewMatrix * ModelMatrix9;
+
+		glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP9[0][0]);
+		glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &ModelMatrix9[0][0]);
+
+		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, (void*)0);
+
 		// Laser //
 		glm::mat4 ModelMatrix6 = glm::mat4(1.0);
 		ModelMatrix6 = glm::translate(ModelMatrix6, glm::vec3(laserX += laserSPEED, laserY, laserZ));		
-		ModelMatrix6 = glm::scale(ModelMatrix6, glm::vec3(0.3, 0.15, 0.1));
+		ModelMatrix6 = glm::scale(ModelMatrix6, glm::vec3(0.3, 0.25, 0.1));
 		glm::mat4 MVP6 = ProjectionMatrix * ViewMatrix * ModelMatrix6;
 
 		glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &MVP6[0][0]);
@@ -354,24 +386,11 @@ int main(int argc, const char** argv)
 
 		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, (void*)0);
 
+
+
+		// Collisions //
 		collision();
 		
-		// Reset Laser Position //
-		if (laserX >= playerX + 25)
-		{
-			SoundEngine->play2D("audio/Laser_Valenspire_1.mp3", false);
-			laserX = playerX;
-			laserY = playerY;
-		}
-
-	//if (laserX >= playerX )
-	//{
-	//
-	//
-	//
-	//}
-
-
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
         glDisableVertexAttribArray(2);
@@ -395,7 +414,7 @@ int main(int argc, const char** argv)
 
     } 
     while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
-        glfwWindowShouldClose(window) == 0);
+    glfwWindowShouldClose(window) == 0);
 
     glDeleteBuffers(1, &vertexbuffer);
     glDeleteBuffers(1, &uvbuffer);
@@ -413,40 +432,34 @@ int main(int argc, const char** argv)
 
 float numberGen()
 {
-
     GLfloat a =  (float(rand()) /float(RAND_MAX));
     return a;
 }
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-	
-	////Player Controls
-	//// Move UP
-	//if (glfwGetKey(window, GLFW_KEY_W) )
-	//{
-	//	switch (action)
-	//	{
-	//	case GLFW_PRESS:
-	//		playerY += 0.1;
-	//		break;
-	//
-	//	case GLFW_REPEAT:
-	//		playerY += 0.1;
-	//		break;
-	//
-	//	}
-	//}
-	// Move Down
-	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS == 0) {
-	
-		SoundEngine->play2D("audio/Laser_Valenspire_1.mp3", false);
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	{
+		double currentTime = glfwGetTime();
+		//printf("%f Current Time is\n", currentTime);
+		if (currentTime > nextFireTime)
+		{
+			if (laserX >= playerX + 15)
+			{
+				laserX = playerX;
+				laserY = playerY;
+				play();
+
+				nextFireTime = currentTime + cooldownTime;
+			}
+		}
 	}
-
-	
-
 }
 
+void play()
+{
+	SoundEngine->play2D("audio/laser.mp3", false);
+}
 
 
 
