@@ -176,8 +176,6 @@ int main(int argc, const char** argv)
 	  Moving[i].cubeSizeZ = 1.0;
   }
 
-
-
   // Main Events //
 
     do {
@@ -194,22 +192,22 @@ int main(int argc, const char** argv)
 		// Move Left
 		if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) 
 		{
-			playerX -= 0.2;
+			playerX -= 0.005;
 		}
 		// Move Right
 		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS )
 		{
-				playerX += 0.2;
+				playerX += 0.005;
 		}
 		// Move Up
 		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
 		{
-			playerY += 0.2;
+			playerY += 0.005;
 		}
 		// Move Down
 		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 		{
-			playerY -= 0.2;
+			playerY -= 0.005;
 		}
 
 		// Laser
@@ -385,8 +383,6 @@ int main(int argc, const char** argv)
 		glUniform1i(TextureID, 0);
 
 		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_SHORT, (void*)0);
-
-
 
 		// Collisions //
 		collision();

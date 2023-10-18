@@ -59,7 +59,7 @@ void collision()
 		{
 			Moving[i].cubeX = 24 + distr(gen) / 2;
 			Moving[i].cubeY = distr(gen);
-			SPEED += 0.01;
+			//SPEED = 0.01f;
 		}
 	}
 
@@ -70,19 +70,16 @@ void collision()
 	if (currentTime > 29.2)
 
 	{
-		SPEED2 = 0.80f;
+		SPEED2 = 0.01151f;
 		if (lowCubeX <= -20)
 		{
 			lowCubeX = 24;
-
 		}
 
 		if (lowCube2X <= -20)
 		{
 			lowCube2X = 24;
-
 		}
-
 	}
 
 	// Screen edge collision //

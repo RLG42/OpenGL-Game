@@ -2,7 +2,7 @@
 
 // Game //
 float Gravity = 0.25f;
-float SPEED = 1.0f;
+float SPEED = 0.01f;
 bool gameOver = false;
 float SPEED2 = 0.0f;
 
@@ -30,7 +30,7 @@ float laserX = 14.0f;
 float laserY = 0.0f;
 float laserZ = 0.0f;
 
-float laserSPEED = 2.0f;
+float laserSPEED = 0.08f;
 
 float laserSizeX = 2.0f;
 float laserSizeY = 2.0f;
