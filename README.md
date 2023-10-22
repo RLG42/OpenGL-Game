@@ -25,8 +25,14 @@ Controls:
 -- WASD = Player Movement
 -- Space = Shoot
 
+https://github.com/Greenleaf12/OpenGL-Game/assets/74846782/9151d381-3fc8-472d-ab0a-c3c92d936b04
+
 ![image](https://user-images.githubusercontent.com/74846782/170994293-1c5e49a2-7ea3-4487-87f3-72f831124bd5.png)
 -- Screenshot -- 
+
+
+
+
 
 
 
