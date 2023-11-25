@@ -177,7 +177,6 @@ int main(int argc, const char** argv)
   }
 
   // Main Events //
-
     do {
 
         double currentTime = glfwGetTime();
@@ -456,6 +455,3 @@ void play()
 {
 	SoundEngine->play2D("audio/laser.mp3", false);
 }
-
-
-

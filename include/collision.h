@@ -18,7 +18,6 @@ bool checkCollision(float Ax, float Ay, float Aw, float Ah, float Bx, float By, 
 	return true;
 }
 
-
 /////////////////////////////////////////////////////// Collision Detection //////////////////////////////////////////////////////////////
 
 void collision()
@@ -45,7 +44,7 @@ void collision()
 
 	for (int i = 0; i < 4; i++)
 	{
-		if (checkCollision(laserX, laserY, laserSizeX, laserSizeY, Moving[i].cubeX, Moving[i].cubeY, Moving[i].cubeSizeY, Moving[i].cubeSizeY) == true)//Check for collision
+		if (checkCollision(laserX, laserY, laserSizeX, laserSizeY, Moving[i].cubeX, Moving[i].cubeY, Moving[i].cubeSizeY, Moving[i].cubeSizeY) == true) //Check for collision
 		{
 			printf("Laser HIT Cube\n");
 			Moving[i].cubeX = 24 + distr(gen) / 2;
@@ -64,7 +63,6 @@ void collision()
 	}
 
 	// low cubes //
-
 	double currentTime = glfwGetTime();
 	printf("%f Current Time is\n", currentTime);
 	if (currentTime > 29.2)
@@ -87,8 +85,4 @@ void collision()
 	if (playerX > 15) { playerX = 15; }
 	if (playerY < -11) { playerY = -11; }
 	if (playerY > 11) { playerY = 11; }
-
-
 }
-
-
